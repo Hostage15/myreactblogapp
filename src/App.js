@@ -1,15 +1,16 @@
 import './App.css';
+import Navbar from './Navbar';
+import Home from './Home';
 
 function App() {
-  const title = "This is the title."
-  const link = "https://www.google.com"
-  const googleTitle = "Google Site"
-
+  
   return (
     <div className="App">
-      <h1>{ title }</h1>
-      <a href={link}>{ googleTitle }</a>
-      <p>{ Math.random() * 1000 }</p>
+      <Navbar />
+      <div className='content'>
+        <Home />
+      </div>
+      
     </div>
   );
 }
