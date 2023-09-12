@@ -1,23 +1,25 @@
+import { useState } from "react"
+
 const Home = () => {
     const title = "This is the title of home page."
     const link = "https://www.google.com"
     const googleTitle = "Google Site"
 
-    const handleClick = () => {
-        console.log("CLICKED!!!")
-    }
+    const [name, setName] = useState("Mario")
+    const [age, setAge] = useState(25)
 
-    const handleClickAgain = (name) => {
-        console.log(name + "!!!!!")
+
+    const handleClick = () => {
+        setName('Luigi')
+        setAge(33)
     }
 
     return ( 
         <div className="Home">
             <h3>{ title }</h3>
             <a href={link}>{ googleTitle }</a>
-            <p>{ Math.random() * 1000 }</p>
+            <p>{ name } is { age } years old.</p>
             <button onClick={handleClick}>Click here!</button>
-            <button onClick={() => handleClickAgain("What")}>Click Again!</button>
         </div>
      );
 }
